@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int x , y;
+	int i=0;
+
+	cout<<"请输入两个整数："<<endl;
+	cin>>x>>y;
+
+	if(x>y)
+	{
+		for(i=y;i<=x;i++)
+			cout<<i;
+			cout<<endl;    //所有数字输出在1行
+	}
+	else
+	{
+		for(i=x;i<=y;i++)
+			cout<<i<<endl;  //每行输出一个数字
+	}
+
+	return 0;
+}
