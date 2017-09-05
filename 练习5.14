@@ -1,0 +1,41 @@
+/*  编写一段程序，从标准输入中读取若干string对象并查找连续重复出现的单词。
+	所谓连续出现的意思是：一个单词后面紧跟着这个单词本身。要求记录连续重复
+	出现的最大次数以及对应的单词。如果这样的单词存在，输出重复出现的最大次数；
+	如果不存在，输出一条信息说明任何单词都没有连续出现过。
+*/
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	string word, pre_word, max_time_word;
+	int times = 0, max_times = 0;
+
+	while (cin >> word)
+	{
+		if(word == pre_word)
+			++times;
+		else
+		{
+			times = 1;
+			pre_word = word;
+		}
+
+		if(max_times < times)
+		{
+			max_times = times;
+			max_time_word = pre_word;
+		}
+
+	}
+	
+		if(max_times <= 1)
+			cout << "no word was repeated" << endl;
+		else
+			cout << "The word" << max_time_word << "appear" << max_times << "times" << endl;
+
+	return 0;
+}
